@@ -7,7 +7,7 @@ jobs:
      
      # Checkout code
  
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     
       # Log into Azure
     
@@ -21,7 +21,7 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
-        template: "ARM-Templates/container-webbapp-template.json"
+        template: 'ARM-Templates/container-webbapp-template.json'
 
 
       # output containerName variable from template
