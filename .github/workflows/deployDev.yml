@@ -20,7 +20,7 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ secrets.AZURE_RG }}
-          template: container-webbapp-template.json
+          template: ./container-webbapp-template.json
 
 
       # output containerName variable from template
