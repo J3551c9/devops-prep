@@ -6,11 +6,11 @@ jobs:
     steps:
      
      # Checkout code
-    name: Checkout
+ 
     - uses: actions/checkout@v2
     
       # Log into Azure
-    name: Login
+    
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
