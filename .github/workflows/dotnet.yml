@@ -1,0 +1,28 @@
+name: .NET
+
+on:
+  push:
+    paths:
+      - 'Application/**'
+  pull_request:
+    paths:
+      - 'Application/**'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.2
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build /Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj --no-restore
+    - name: Test
+      run: dotnet test Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj --no-build --verbosity normal
