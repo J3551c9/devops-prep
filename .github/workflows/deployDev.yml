@@ -7,7 +7,7 @@ jobs:
      
      # Checkout code
  
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@master
     
       # Log into Azure
     
