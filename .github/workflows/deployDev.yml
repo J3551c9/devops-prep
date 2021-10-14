@@ -1,13 +1,14 @@
 on: [push]
 name: deployDev
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    # Checkout code
-    - uses: actions/checkout@v2
-    # Log into Azure
-    - uses: azure/login@v1
+    - name: Checkout
+    uses: actions/checkout@v2
+    - name: Login
+    uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
