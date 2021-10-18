@@ -10,4 +10,4 @@ dotnet test
 
 Making sure this works!!!
 
-#removing registry secret
+#printing env
