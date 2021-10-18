@@ -40,7 +40,7 @@ jobs:
       - name: Docker login
         uses: Azure/docker-login@v1
         with:
-          login-server: $registryName
+          login-server: devowghdevopsreg.azurecr.io
           username: ${{secrets.AZURE_ACR_USR}}
           password: ${{secrets.AZURE_ACR_PSDD}}
       - name: Docker build
