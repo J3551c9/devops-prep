@@ -36,8 +36,14 @@ jobs:
       steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Docker login
-        run: docker $registryName -u ${{ secrets.AZURE_ACR_USR }} -p ${{ secrets.AZURE_ACR_PSDD }}
+      #- name: Docker login
+      #  run: docker $registryName -u ${{ secrets.AZURE_ACR_USR }} -p ${{ secrets.AZURE_ACR_PSDD }}
+      - uses: azure/docker-login@v1
+        with:
+          login-server: $registryName
+          username: ${{ secrets.AZURE_ACR_USR }}
+          password: ${{ secrets.AZURE_ACR_PSDD }}
+
       - name: Docker build
         run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
       - name: Docker push
