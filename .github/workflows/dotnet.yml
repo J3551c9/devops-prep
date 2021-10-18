@@ -1,6 +1,6 @@
 name: .NET
 env:
-  registryName: ${{ secrets.AZURE_ACR }}
+  registryName: ${{secrets.AZURE_ACR}}
   repositoryName: wth/dotnetcoreapp
   dockerFolderPath: Application/src/RazorPagesTestSample
   tag: ${{github.run_number}}
@@ -41,8 +41,8 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: $registryName
-          username: ${{ secrets.AZURE_ACR_USR }}
-          password: ${{ secrets.AZURE_ACR_PSDD }}
+          username: ${{secrets.AZURE_ACR_USR}}
+          password: ${{secrets.AZURE_ACR_PSDD}}
       - name: Docker build
         run: docker build $dockerFolderPath --tag $registryName/$repositoryName:$tag --build-arg build_version=$tag 
       - name: Docker push
