@@ -37,7 +37,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Docker login
-      ##run: docker $registryName -u ${{ secrets.AZURE_ACR_USR }} -p ${{ secrets.AZURE_ACR_PSDD }}
         uses: azure/docker-login@v1
         with:
           login-server: $registryName
