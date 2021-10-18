@@ -10,4 +10,4 @@ dotnet test
 
 Making sure this works!!!
 
-#Fixing login-server
+#removing registry secret
