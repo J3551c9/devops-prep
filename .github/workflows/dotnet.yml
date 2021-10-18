@@ -60,6 +60,7 @@ jobs:
        with:
          creds: ${{ secrets.AZURE_CREDENTIALS }}
      - name: Deploy to WebApp
+       uses: azure/webapps-deploy@v2
        with:
          app-name: 'devowghdevops-dev'
          images: '$registryName/$repositoryName:$tag'
