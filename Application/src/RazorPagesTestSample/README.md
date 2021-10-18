@@ -10,4 +10,4 @@ dotnet test
 
 Making sure this works!!!
 
-#Fixing resigtry
+#Fixing docker folder path
