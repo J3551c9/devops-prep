@@ -10,4 +10,4 @@ dotnet test
 
 Making sure this works!!!
 
-#printing env again
+#printing env again and again
