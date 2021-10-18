@@ -10,4 +10,4 @@ dotnet test
 
 Making sure this works!!!
 
-#Test docker build and push
+#Fixing docker login
