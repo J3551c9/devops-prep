@@ -10,4 +10,4 @@ dotnet test
 
 Making sure this works!!!
 
-#deploying image to web app
+#deploying image inside job build and deploy
