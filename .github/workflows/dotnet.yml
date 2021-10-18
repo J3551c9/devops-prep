@@ -2,7 +2,7 @@ name: .NET
 env:
   registryName: ${{ secrets.AZURE_ACR }}
   repositoryName: wth/dotnetcoreapp
-  dockerFolderPath: Application/aspnet-core-dotnet-core
+  dockerFolderPath: Application/src/RazorPagesTestSample
   tag: ${{github.run_number}}
 
 on:
