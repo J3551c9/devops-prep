@@ -38,9 +38,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Docker login
-        uses: azure/docker-login@v1
+        uses: Azure/docker-login@v1
         with:
-          registry: $registryName
+          login-server: https://$registryName
           username: ${{secrets.AZURE_ACR_USR}}
           password: ${{secrets.AZURE_ACR_PSDD}}
       - name: Docker build
