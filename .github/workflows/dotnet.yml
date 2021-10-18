@@ -1,6 +1,6 @@
 name: .NET
 env:
-  registryName: ${{secrets.AZURE_ACR}}
+  registryName: devowghdevopsreg.azurecr.io
   repositoryName: wth/dotnetcoreapp
   dockerFolderPath: Application/src/RazorPagesTestSample
   tag: ${{github.run_number}}
