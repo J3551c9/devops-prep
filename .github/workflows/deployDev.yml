@@ -19,7 +19,7 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ secrets.AZURE_RG }}
           template: ARM-Templates/template.json
-          parameters: webAppName=devowghdevops-prod
+          parameters: webAppName=devowghdevops-dev
 
       # output containerName variable from template
       - run: echo ${{ steps.deploy.outputs.containerName }}
