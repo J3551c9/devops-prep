@@ -48,21 +48,32 @@ jobs:
       - run: cat ${{ env.DOCKER_CONFIG }}/config.json
       - name: Docker push
         run: docker push $registryName/$repositoryName:$tag
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Deploy to WebApp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'devowghdevops-dev'
+          publish-profile: dotnetcore
+          images: '$registryName/$repositoryName:$tag'
   
-  publish-to-webapp:
-     needs: docker-build-push
-     runs-on: ubuntu-latest
-     steps:
-     - name: Checkout
-       uses: actions/checkout@v2
-     - name: Azure Login
-       uses: azure/login@v1
-       with:
-         creds: ${{ secrets.AZURE_CREDENTIALS }}
-     - name: Deploy to WebApp
-       uses: azure/webapps-deploy@v2
-       with:
-         app-name: 'devowghdevops-dev'
-         images: '$registryName/$repositoryName:$tag'
+##  publish-to-webapp:
+##     needs: docker-build-push
+##     runs-on: ubuntu-latest
+##     steps:
+##     - name: Checkout
+##       uses: actions/checkout@v2
+##     - name: Azure Login
+##       uses: azure/login@v1
+##       with:
+##         creds: ${{ secrets.AZURE_CREDENTIALS }}
+##     - name: Deploy to WebApp
+##       uses: azure/webapps-deploy@v2
+##       with:
+##         app-name: 'devowghdevops-dev'
+##         publish-profile: dotnetcore
+##         images: '$registryName/$repositoryName:$tag'
      
 
