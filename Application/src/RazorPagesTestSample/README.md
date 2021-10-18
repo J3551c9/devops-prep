@@ -10,4 +10,4 @@ dotnet test
 
 Making sure this works!!!
 
-#Fixing docker folder path
+#Fixing dependencies
