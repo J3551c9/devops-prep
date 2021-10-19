@@ -55,9 +55,9 @@ jobs:
       - name: Deploy to WebApp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'devowghdevops-dev'
+          app-name: devowghdevops-dev
           #publish-profile: ${{ secrets.WEBAPP_PUBLISH_PROFILE }}
-          images: '$registryName/$repositoryName:$tag'
+          images: $registryName/$repositoryName:$tag
   
 ##  publish-to-webapp:
 ##     needs: docker-build-push

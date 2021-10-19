@@ -10,4 +10,4 @@ dotnet test
 
 Making sure this works!!!
 
-#coment publish profile
+#removing commas
