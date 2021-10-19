@@ -10,4 +10,4 @@ dotnet test
 
 Making sure this works!!!
 
-#removing publish profile
+#adding publish profile
