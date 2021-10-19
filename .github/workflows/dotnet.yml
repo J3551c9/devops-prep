@@ -56,7 +56,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'devowghdevops-dev'
-          publish-profile: dotnetcore
           images: '$registryName/$repositoryName:$tag'
   
 ##  publish-to-webapp:
