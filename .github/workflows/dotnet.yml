@@ -57,7 +57,7 @@ jobs:
         with:
           app-name: devowghdevops-dev
           #publish-profile: ${{ secrets.WEBAPP_PUBLISH_PROFILE }}
-          images: $registryName/$repositoryName:$tag
+          images: echo '$registryName/$repositoryName:$tag'
   
 ##  publish-to-webapp:
 ##     needs: docker-build-push
