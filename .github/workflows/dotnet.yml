@@ -57,7 +57,7 @@ jobs:
         with:
           app-name: devowghdevops-dev
           #publish-profile: ${{ secrets.WEBAPP_PUBLISH_PROFILE }}
-          images: "$registryName/$repositoryName:$tag"
+          images: devowghdevopsreg.azurecr.io/wth/dotnetcoreapp:34
   
 ##  publish-to-webapp:
 ##     needs: docker-build-push
