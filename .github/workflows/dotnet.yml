@@ -56,25 +56,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: devowghdevops-dev
-          #publish-profile: ${{ secrets.WEBAPP_PUBLISH_PROFILE }}
-          #images: devowghdevopsreg.azurecr.io/wth/dotnetcoreapp:$tag
           images: ${{ env.registryName }}/${{ env.repositoryName }}:${{ env.tag }}
-  
-##  publish-to-webapp:
-##     needs: docker-build-push
-##     runs-on: ubuntu-latest
-##     steps:
-##     - name: Checkout
-##       uses: actions/checkout@v2
-##     - name: Azure Login
-##       uses: azure/login@v1
-##       with:
-##         creds: ${{ secrets.AZURE_CREDENTIALS }}
-##     - name: Deploy to WebApp
-##       uses: azure/webapps-deploy@v2
-##       with:
-##         app-name: 'devowghdevops-dev'
-##         publish-profile: dotnetcore
-##         images: '$registryName/$repositoryName:$tag'
+
      
 
